@@ -963,8 +963,8 @@ with tab1:
     low_scorers = f_onboarding[f_onboarding['overall_score'] < 3.0] if not f_onboarding.empty else pd.DataFrame()
     struggle_rate = (len(low_scorers) / len(f_onboarding) * 100) if len(f_onboarding) > 0 else 0
 
-    col1.metric("Role Clarity", f"{avg_clarity:.1f} / 5.0", delta="+0.2 vs baseline" if avg_clarity >= 3.5 else "-0.4 lag")
-    col2.metric("Tools & Equipment Access", f"{avg_tools:.1f} / 5.0", delta="+1.1 resolved" if avg_tools >= 3.5 else "-1.2 critical")
+    col1.metric("Role Clarity", f"{avg_clarity:.1f} / 5.0")
+    col2.metric("Tools & Equipment Access", f"{avg_tools:.1f} / 5.0")
     col3.metric("Manager Enablement", f"{avg_support:.1f} / 5.0")
     col4.metric("At-Risk Joiners (<3.0)", f"{len(low_scorers)} ({struggle_rate:.0f}%)", delta_color="inverse")
 
@@ -1000,7 +1000,7 @@ with tab1:
                             <div style="display: flex; gap: 24px; margin: 10px 0 14px 0; font-size: 0.85rem; color: #64748B;">
                                 <span>🏢 <b>Division:</b> {item.get('department', 'All')}</span>
                                 <span>📍 <b>Location:</b> {item.get('location', 'All')}</span>
-                                <span>👤 <b>Accountable Lead:</b> <strong style="color: #0F172A;">{item.get('owner', 'HR Lead')}</strong></span>
+                                <span>👤 <b>Accountable Lead:</b> <strong style="color: #64748B;">{item.get('owner', 'HR Lead')}</strong></span>
                             </div>
                             <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 12px 16px; border-radius: 8px;">
                                 <strong style="color: #F36F21; font-size: 0.85rem; text-transform: uppercase;">Prescribed Intervention:</strong>
@@ -1106,7 +1106,7 @@ with tab2:
                 st.markdown(f"""
                 <div class="saas-card saas-card-brand">
                     <strong style="color: #F36F21; font-size: 0.95rem;">🎯 Target Issue: {act.get('target')}</strong>
-                    <p style="margin: 6px 0; color: #1E293B; font-weight: 600;">{act.get('action')}</p>
+                    <p style="margin: 6px 0; color: #FFFFFF; font-weight: 600;">{act.get('action')}</p>
                     <div style="display: flex; gap: 24px; font-size: 0.85rem; color: #64748B; margin-top: 6px;">
                         <span>👤 Owner: <b>{act.get('owner')}</b></span>
                         <span>📈 KPI Target: <code>{act.get('target_metric')}</code></span>
