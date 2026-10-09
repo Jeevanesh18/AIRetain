@@ -1,0 +1,7 @@
+[theme]
+base = "dark"
+primaryColor = "#F36F21"                # Glocomp Orange Accent
+backgroundColor = "#0B0F17"             # Deep Navy-Slate Canvas
+secondaryBackgroundColor = "#151C28"    # Card / Sidebar Surface
+textColor = "#F8FAFC"                   # High-contrast White Text
+font = "sans serif"
